@@ -20,7 +20,7 @@ const Card = ({ transaction }) => {
 	let { description, paymentType, category, amount, location, date } = transaction;
 	const cardClass = categoryColorMap[category];
 	const [deleteTransaction, { loading }]=useMutation( DELETE_TRANSACTION,{
-		refetchQueries: ["GetTransactions",],
+		refetchQueries: ["GetTransactions","GetTransactionStatistics"],
 	});
 	// Capitalize the first letter of each field
 	description = description[0]?.toUpperCase() + description.slice(1);
@@ -70,11 +70,7 @@ const Card = ({ transaction }) => {
 				</p>
 				<div className='flex justify-between items-center'>
 					<p className='text-xs text-black font-bold'>{formattedDate}</p>
-					<img
-						src={"https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
-						className='h-8 w-8 border rounded-full'
-						alt=''
-					/>
+					
 				</div>
 			</div>
 		</div>

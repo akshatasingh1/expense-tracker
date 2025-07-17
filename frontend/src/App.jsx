@@ -8,6 +8,7 @@ import Header from './components/ui/Header'
 import { useQuery } from '@apollo/client'
 import { GET_AUTHENTICATED_USER } from './graphql/queries/user.query'
 import { Toaster } from "react-hot-toast";
+
 function App() {
   
   const {loading,data,}=useQuery(GET_AUTHENTICATED_USER)
